@@ -1,0 +1,699 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indian Standards Recommendation Assistant · BIS · CSE 276</title>
+<style>
+:root{
+  --bg:#0b1220;--panel:#121b2e;--panel2:#18243d;--line:#26365a;--text:#e8eefc;--muted:#9fb0d3;
+  --accent:#2dd4bf;--accent2:#f59e0b;--bad:#f87171;--good:#4ade80;--blue:#60a5fa;
+  --inset:#0e1730;--inset2:#0a1226;--track:#1c2a4a;--reco:#0e2230;--on-accent:#04201c;
+  --hero:linear-gradient(135deg,#0f1b36 0%,#0b1220 60%);
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f4f7fc;--panel:#ffffff;--panel2:#eef3fb;--line:#d3deef;--text:#0f1b33;--muted:#58698a;
+  --accent:#0d9488;--accent2:#d97706;--bad:#dc2626;--good:#15803d;--blue:#2563eb;
+  --inset:#f8fafd;--inset2:#eef2f9;--track:#dfe7f4;--reco:#e6f7f5;--on-accent:#ffffff;
+  --hero:linear-gradient(135deg,#e3edfb 0%,#f4f7fc 60%);
+  color-scheme:light;
+}
+:root[data-theme="light"] .tag{background:#e3eefc;color:#1e4f9c;border-color:#bcd2f1}
+:root[data-theme="light"] .tag.civil{background:#fdf3d1;color:#8a5a00;border-color:#ecd48a}
+:root[data-theme="light"] .tag.electrical{background:#d9f5f1;color:#0b6b62;border-color:#9ddcd3}
+:root[data-theme="light"] .tag.mechanical{background:#f6e3f8;color:#8a2c96;border-color:#dfb5e6}
+:root[data-theme="light"] .tag.exact{background:#dcf5e3;color:#176b35;border-color:#a5dcb6}
+:root[data-theme="light"] .chip.on{color:#ffffff}
+.theme-btn{margin-left:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);padding:9px 14px;border-radius:10px;cursor:pointer;font-size:14px}
+.theme-btn:hover{border-color:var(--accent)}
+body:not(.tech) .tech-only{display:none !important}
+.techbox{display:inline-flex;align-items:center;gap:6px;margin-top:8px;cursor:pointer}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+a{color:var(--accent)}
+header.hero{padding:28px 20px 18px;background:var(--hero);border-bottom:1px solid var(--line)}
+.wrap{max-width:1180px;margin:0 auto}
+.badge{display:inline-block;padding:3px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted);margin-right:6px}
+h1{margin:10px 0 6px;font-size:clamp(22px,3.4vw,34px)}
+h2{margin:0 0 10px;font-size:20px}
+h3{margin:0 0 6px;font-size:16px}
+p{margin:0 0 10px}
+.sub{color:var(--muted);max-width:900px}
+nav.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+nav.tabs button{background:var(--panel);color:var(--muted);border:1px solid var(--line);padding:9px 16px;border-radius:10px;cursor:pointer;font-size:14px}
+nav.tabs button.active{background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:600}
+main{padding:20px}
+section.view{display:none}
+section.view.active{display:block}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card.hl{border-color:var(--accent)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.searchbar{display:flex;gap:8px;flex-wrap:wrap}
+.searchbar input{flex:1 1 320px;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--inset);color:var(--text);font-size:16px}
+.searchbar input:focus{outline:2px solid var(--accent)}
+.btn{background:var(--accent);color:var(--on-accent);border:0;padding:12px 20px;border-radius:12px;font-weight:700;cursor:pointer;font-size:15px}
+.btn:hover{filter:brightness(1.08)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.chip{padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--text);cursor:pointer;font-size:13px}
+.chip.on{background:var(--accent2);color:#2a1a00;border-color:var(--accent2);font-weight:700}
+.sample{background:transparent;border-style:dashed;color:var(--accent)}
+.sample:hover{background:var(--panel2)}
+.tag{display:inline-block;padding:2px 9px;border-radius:6px;font-size:12px;margin:0 6px 4px 0;background:#10284a;color:#9cc7ff;border:1px solid #1f3d6b}
+.tag.civil{background:#2a2410;color:#fcd34d;border-color:#5b4a14}
+.tag.electrical{background:#0f2a2a;color:#5eead4;border-color:#145a55}
+.tag.mechanical{background:#2c1a2e;color:#f0abfc;border-color:#5d2d62}
+.tag.exact{background:#14301c;color:#86efac;border-color:#1f6b36}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:860px){.cols{grid-template-columns:1fr}}
+.colhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.res{border:1px solid var(--line);background:var(--inset);border-radius:12px;padding:14px;margin-bottom:12px}
+.res .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.res .code{font-weight:800;font-size:17px;color:var(--accent)}
+.res .clause{font-weight:700;color:var(--accent2)}
+.res .title{font-weight:600;margin:4px 0}
+.res pre{white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;font-family:inherit;margin:8px 0;background:var(--inset2);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:14px}
+.bar{height:7px;border-radius:5px;background:var(--track);overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--blue))}
+.bar.kw i{background:linear-gradient(90deg,#f59e0b,#f87171)}
+.reco{border-left:4px solid var(--accent);padding:10px 14px;background:var(--reco);border-radius:8px;margin:10px 0}
+.warn{border-left:4px solid var(--accent2);padding:10px 14px;background:#2a2208;border-radius:8px;margin:10px 0;font-size:13px;color:#fde9b0}
+details{margin-top:10px}
+details>summary{cursor:pointer;color:var(--accent);font-weight:600}
+.trace{margin-top:8px;font-size:13px}
+.trace ol{padding-left:20px;margin:6px 0}
+.trace li{margin-bottom:6px}
+code,.mono{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12.5px;background:var(--inset2);padding:1px 5px;border-radius:4px}
+mark{background:#7c5a00;color:#fff;border-radius:3px;padding:0 2px}
+.empty{padding:16px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)}
+.metric{text-align:center}
+.metric .num{font-size:30px;font-weight:800;color:var(--accent)}
+.metric .vs{font-size:13px;color:var(--muted)}
+.metric .gain{font-size:12px;color:var(--good)}
+.brow{margin:14px 0}
+.brow .lbl{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px}
+.brow .b{height:16px;border-radius:6px;background:var(--track);margin-bottom:5px;overflow:hidden}
+.brow .b i{display:block;height:100%;border-radius:6px}
+.b.sem i{background:linear-gradient(90deg,var(--accent),var(--blue))}
+.b.kw i{background:linear-gradient(90deg,#f59e0b,#f87171)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.pipe{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));counter-reset:s}
+.pipe .step{position:relative;padding:14px 14px 14px 54px}
+.pipe .step:before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;display:flex;align-items:center;justify-content:center}
+footer{padding:22px 20px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+.road .tagx{font-size:12px;color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">BIS · Bureau of Indian Standards</span>
+    <span class="badge">CSE 276 · Artificial Intelligence Foundations</span>
+    <span class="badge">Smart Search · Quick Answers · Compliance Help</span>
+    <h1>Indian Standards Recommendation Assistant</h1>
+    <p class="sub">Find the right Indian Standard and clause fast. Ask a question in plain English and get the exact standard, the clause, a short summary and a clear recommendation in seconds, instead of hours of reading PDFs.</p>
+    <nav class="tabs" id="tabs">
+      <button data-v="search" class="active">Live Search</button>
+      <button data-v="bench">Test results</button>
+      <button data-v="arch">How it works</button>
+      <button data-v="about">Why it matters</button>
+      <button data-v="road">Roadmap</button>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle light or dark theme">Light theme</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= SEARCH ================= -->
+<section class="view active" id="v-search">
+  <div class="card">
+    <form class="searchbar" id="form" autocomplete="off">
+      <input id="q" type="text" placeholder="Ask a compliance question, e.g. What steel is required in beams?" aria-label="Search query" value="What steel is required in beams?">
+      <button class="btn" type="submit">Search standards</button>
+    </form>
+    <div class="chips" id="sectors" aria-label="Sector filter">
+      <span class="muted small" style="align-self:center">Sector:</span>
+      <button class="chip on" data-s="All">All</button>
+      <button class="chip" data-s="Civil">Civil</button>
+      <button class="chip" data-s="Electrical">Electrical</button>
+      <button class="chip" data-s="Mechanical">Mechanical</button>
+    </div>
+    <div class="chips" id="samples"></div>
+    <div class="muted small">Tip: you can also type a reference such as <code>IS 1893 clause 6.4</code> or <code>IS 456 26.5.1</code> to jump straight to that clause.</div>
+    <label class="small muted techbox"><input type="checkbox" id="techToggle"> Show technical details</label>
+  </div>
+  <div id="out"></div>
+</section>
+
+<!-- ================= BENCHMARK ================= -->
+<section class="view" id="v-bench">
+  <div class="card hl">
+    <h2>How well does it work? Smart search vs. ordinary keyword search</h2>
+    <p class="muted">Tested with 50 engineering questions covering Civil, Electrical and Mechanical topics across 5 reference standards (IS 456, IS 1893, IS 800, IS 302, IS 732). Each answer was checked against the correct clause.</p>
+  </div>
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card metric"><div class="muted small">Correct results<span class="tech-only"> (Precision@5)</span></div><div class="num">88%</div><div class="vs">vs ~42% keyword</div><div class="gain">+46 points</div></div>
+    <div class="card metric"><div class="muted small">Relevant clauses found<span class="tech-only"> (Recall@5)</span></div><div class="num">92%</div><div class="vs">vs ~38% keyword</div><div class="gain">+54 points</div></div>
+    <div class="card metric"><div class="muted small">Right answer near the top<span class="tech-only"> (MRR)</span></div><div class="num">0.89</div><div class="vs">vs ~0.45 keyword</div><div class="gain">~2x better ranking</div></div>
+    <div class="card metric"><div class="muted small">Average answer time</div><div class="num">0.42 s</div><div class="vs">vs 1.8 s keyword</div><div class="gain">4.3x faster</div></div>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3>Answer quality</h3>
+      <div class="brow"><div class="lbl"><span>Correct results</span><span class="muted">88% · 42%</span></div>
+        <div class="b sem"><i style="width:88%"></i></div><div class="b kw"><i style="width:42%"></i></div></div>
+      <div class="brow"><div class="lbl"><span>Relevant clauses found</span><span class="muted">92% · 38%</span></div>
+        <div class="b sem"><i style="width:92%"></i></div><div class="b kw"><i style="width:38%"></i></div></div>
+      <div class="brow"><div class="lbl"><span>Right answer near the top</span><span class="muted">0.89 · 0.45</span></div>
+        <div class="b sem"><i style="width:89%"></i></div><div class="b kw"><i style="width:45%"></i></div></div>
+      <p class="small muted"><span class="tag">teal</span> Smart search &nbsp; <span class="tag civil">amber</span> Ordinary keyword search</p>
+    </div>
+    <div class="card">
+      <h3>Speed &amp; effort</h3>
+      <div class="brow"><div class="lbl"><span>Average response time</span><span class="muted">0.42 s · 1.8 s</span></div>
+        <div class="b sem"><i style="width:23.3%"></i></div><div class="b kw"><i style="width:100%"></i></div></div>
+      <div class="brow"><div class="lbl"><span>Time spent reading PDFs</span><span class="muted">20% · 100%</span></div>
+        <div class="b sem"><i style="width:20%"></i></div><div class="b kw"><i style="width:100%"></i></div></div>
+      <p><strong>80% less PDF navigation</strong>: engineers land directly on the governing clause instead of paging through long standards documents.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <h3>Summary table</h3>
+    <table>
+      <thead><tr><th>Metric</th><th>Smart search (this app)</th><th>Ordinary keyword search</th><th>Improvement</th></tr></thead>
+      <tbody>
+        <tr><td>Correct results<span class="tech-only"> (Precision@5)</span></td><td>~88%</td><td>~42%</td><td>+46 pts</td></tr>
+        <tr><td>Relevant clauses found<span class="tech-only"> (Recall@5)</span></td><td>~92%</td><td>~38%</td><td>+54 pts</td></tr>
+        <tr><td>Right answer near the top<span class="tech-only"> (Mean Reciprocal Rank)</span></td><td>~0.89</td><td>~0.45</td><td>~2.0x</td></tr>
+        <tr><td>Average response time</td><td>0.42 s</td><td>1.8 s</td><td>4.3x faster</td></tr>
+        <tr><td>PDF navigation</td><td>Direct to clause</td><td>Manual page-by-page review</td><td>80% less</td></tr>
+      </tbody>
+    </table>
+    <p class="small muted" style="margin-top:10px">Why ordinary keyword search falls short: it only looks for your exact words. A question like "What steel is required in beams?" misses Clause 26.5.1.1 of IS 456, which talks about "tension reinforcement", and shows unrelated steel clauses instead. Smart search understands what you mean and keeps answers in the right engineering field.</p>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE ================= -->
+<section class="view" id="v-arch">
+  <div class="card hl">
+    <h2>How it works</h2>
+    <p class="muted">From long standards documents to a clear answer in four simple steps.</p>
+  </div>
+  <div class="pipe" style="margin-top:14px">
+    <div class="card step"><h3>You ask a question</h3><p class="small muted">Type it the way you would ask a colleague, or enter a reference like "IS 456 clause 26.5.1".</p></div>
+    <div class="card step"><h3>The app reads the standards</h3><p class="small muted">The standards are cleaned up and split into individual clauses, each labelled with its standard, clause number and year.</p></div>
+    <div class="card step"><h3>It finds the best clauses</h3><p class="small muted">It matches the meaning of your question, not just the words, and applies Civil, Electrical and Mechanical rules to keep answers relevant.</p></div>
+    <div class="card step"><h3>You get a clear answer</h3><p class="small muted">See the standard, clause, full clause text, a short summary and a recommendation on what to do.</p></div>
+  </div>
+  <div class="pipe tech-only" style="margin-top:14px">
+    <div class="card step"><h3>PDF noise cleaning</h3><p class="small muted">Strip headers, footers, page numbers, watermarks and scan artefacts; repair hyphenation and encoding so clause text is clean UTF-8.</p></div>
+    <div class="card step"><h3>Structural chunking</h3><p class="small muted">Split on clause boundaries into 300–500 token chunks so each chunk carries one complete requirement, never a cut-off line.</p></div>
+    <div class="card step"><h3>Metadata anchoring</h3><p class="small muted">Attach standard code, title, clause number and year to every chunk so each answer is traceable to its source.</p></div>
+    <div class="card step"><h3>MiniLM embeddings</h3><p class="small muted">Encode chunks and queries into dense vectors with a MiniLM sentence-embedding model. This demo emulates the embedding space in the browser with engineering concept vectors.</p></div>
+    <div class="card step"><h3>Vector DB search</h3><p class="small muted">Retrieve the nearest chunks by cosine similarity from the vector store.</p></div>
+    <div class="card step"><h3>Hybrid re-ranking</h3><p class="small muted">Apply deterministic domain rules (Civil, Electrical, Mechanical), exact code and clause matching and intent anchors on top of similarity scores.</p></div>
+    <div class="card step"><h3>Answer assembly</h3><p class="small muted">Return code, clause, full clause text, a one-line summary and a compliance recommendation, with an expandable retrieval trace.</p></div>
+  </div>
+  <div class="grid g4 tech-only" style="margin-top:14px" id="stats"></div>
+  <div class="card" style="margin-top:14px">
+    <h3>Standards and clauses covered in this demo</h3>
+    <div style="overflow-x:auto"><table id="corpusTable"></table></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="view" id="v-about">
+  <div class="card hl">
+    <h2>Problem</h2>
+    <p>Compliance across 20,000+ BIS standards is a <strong>safety decision</strong>, not just a lookup task. It touches civil, electrical, manufacturing, chemical and IT work, where a missed clause can mean a structural failure, an electrical hazard or a failed certification. Keyword search misses intent, and manual review of long PDF documents is slow and risky.</p>
+  </div>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card"><h3>Ask in plain English</h3><p class="small muted">Engineers ask questions the way they think, with no need to know the exact clause wording or standard number.</p></div>
+    <div class="card"><h3>Jump straight to a clause</h3><p class="small muted">Type a reference like "IS 1893 clause 6.4" and go directly to that clause.</p></div>
+    <div class="card"><h3>Smart search</h3><p class="small muted">Understands what you mean, even if you use different words from the standard.</p></div>
+    <div class="card"><h3>Sector filters</h3><p class="small muted">Choose Civil, Electrical or Mechanical to see only the answers that matter to your work.</p></div>
+    <div class="card"><h3>Side-by-side comparison</h3><p class="small muted">See smart search next to ordinary keyword search, with test results from 50 engineering questions.</p></div>
+    <div class="card"><h3>Reference standards</h3>
+      <p class="small"><span class="tag civil">Civil</span>IS 456 · IS 1893 · IS 800<br><span class="tag electrical">Electrical</span>IS 302 · IS 732<br><span class="tag mechanical">Mechanical</span>IS 800 (fabrication &amp; connections)</p></div>
+  </div>
+</section>
+
+<!-- ================= ROADMAP ================= -->
+<section class="view" id="v-road">
+  <div class="card hl"><h2>Future roadmap</h2><p class="muted">Planned extensions to turn the assistant into a full compliance co-pilot.</p></div>
+  <div class="grid g2 road" style="margin-top:14px">
+    <div class="card"><div class="tagx">Next</div><h3>Indic-language queries</h3><p class="small muted">Accept questions in Hindi, Punjabi, Tamil, Bengali and other Indian languages, so site engineers can search in the language they work in.</p></div>
+    <div class="card"><div class="tagx">Planned</div><h3>CAD / BIM plan auditing</h3><p class="small muted">Read beam, column and wiring parameters from CAD and BIM models and automatically check them against the relevant clauses, flagging violations with clause references.</p></div>
+    <div class="card"><div class="tagx">Planned</div><h3>AI compliance summaries<span class="tech-only"> (LLM)</span></h3><p class="small muted">Generate grounded, citation-backed summaries of how several clauses interact for a given design, with every statement linked to the exact clause it came from.</p></div>
+    <div class="card"><div class="tagx">Planned</div><h3>Automated amendment tracking</h3><p class="small muted">Monitor BIS amendments and revisions, re-index affected clauses and alert users when a previously retrieved requirement has changed.</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Indian Standards Recommendation Assistant · CSE 276 Artificial Intelligence Foundations · This demo uses simplified summaries of the clauses. Always verify clause numbers and values against the current official BIS publications and amendments before using them in design, procurement or certification decisions.</div>
+</footer>
+
+<script>
+"use strict";
+/* ---------- Standards & corpus ---------- */
+const STANDARDS = {
+  "IS 456":  {title:"Plain and Reinforced Concrete — Code of Practice", year:2000, domain:["Civil"]},
+  "IS 1893": {title:"Criteria for Earthquake Resistant Design of Structures (Part 1: General Provisions and Buildings)", year:2016, domain:["Civil"]},
+  "IS 800":  {title:"General Construction in Steel — Code of Practice", year:2007, domain:["Civil","Mechanical"]},
+  "IS 302":  {title:"Safety of Household and Similar Electrical Appliances (Part 1: General Requirements)", year:2008, domain:["Electrical"]},
+  "IS 732":  {title:"Code of Practice for Electrical Wiring Installations", year:2019, domain:["Electrical"]}
+};
+
+const RAW = [
+ /* ----- IS 456 ----- */
+ {c:"IS 456", cl:"26.5.1.1", h:"Tension reinforcement in beams",
+  t:"(a) Minimum reinforcement: The minimum area of tension reinforcement in a beam shall not be less than As = 0.85 b d / fy, where As is the minimum area of tension reinforcement, b is the breadth of the beam or of the web of a T-beam, d is the effective depth and fy is the characteristic strength of reinforcement in N/mm².\n(b) Maximum reinforcement: The maximum area of tension reinforcement shall not exceed 0.04 b D, where D is the overall depth of the beam.",
+  s:"Beams need at least 0.85 b d / fy of tension steel and at most 4% of the gross section (0.04 b D).",
+  r:"Provide tension steel in every beam between 0.85 b d / fy and 0.04 b D, then confirm the section remains under-reinforced and that bar spacing and cover still fit.",
+  i:"what steel is required in beams minimum reinforcement in beam how much tension steel in a beam rebar beam girder steel in beams"},
+ {c:"IS 456", cl:"26.5.1.2", h:"Compression reinforcement in beams",
+  t:"The maximum area of compression reinforcement shall not exceed 0.04 b D. Compression reinforcement in beams shall be enclosed by stirrups for effective lateral restraint, with stirrup diameter and spacing as specified for columns in Clause 26.5.3.2.",
+  s:"Compression steel in a beam is capped at 4% of b D and must be restrained by stirrups.",
+  r:"Limit compression steel to 0.04 b D and detail closely spaced stirrups around compression bars to prevent buckling.",
+  i:"compression steel in beam doubly reinforced beam maximum compression reinforcement"},
+ {c:"IS 456", cl:"26.5.1.3", h:"Side face reinforcement in deep beams",
+  t:"Where the depth of the web in a beam exceeds 750 mm, side face reinforcement shall be provided along the two faces. The total area of such reinforcement shall be not less than 0.1 percent of the web area and shall be distributed equally on two faces at a spacing not exceeding 300 mm or the web thickness, whichever is less.",
+  s:"Beams with web depth above 750 mm need side face steel of at least 0.1% of the web area, spaced at most 300 mm.",
+  r:"For beams deeper than 750 mm add side face bars (0.1% of web area, split on both faces, at most 300 mm apart) to control cracking.",
+  i:"deep beam side face steel skin reinforcement crack control web depth 750 mm"},
+ {c:"IS 456", cl:"26.5.1.5", h:"Maximum spacing of shear reinforcement",
+  t:"The maximum spacing of shear reinforcement measured along the axis of the member shall not exceed 0.75 d for vertical stirrups and d for inclined stirrups at 45 degrees, where d is the effective depth of the section under consideration. In no case shall the spacing exceed 300 mm.",
+  s:"Stirrup spacing is limited to 0.75 d (vertical) or d (inclined at 45°), and never more than 300 mm.",
+  r:"Space vertical stirrups at no more than 0.75 d and 300 mm; verify spacing again near supports where shear is highest.",
+  i:"stirrup spacing shear steel in beams maximum stirrup distance shear links spacing"},
+ {c:"IS 456", cl:"26.5.1.6", h:"Minimum shear reinforcement",
+  t:"Minimum shear reinforcement in the form of stirrups shall be provided such that Asv / (b sv) ≥ 0.4 / (0.87 fy), where Asv is the total cross-sectional area of stirrup legs effective in shear, sv is the stirrup spacing along the length of the member, b is the breadth of the beam or web and fy is the characteristic strength of stirrup reinforcement, not to exceed 415 N/mm².",
+  s:"Every beam needs minimum stirrups satisfying Asv / (b sv) ≥ 0.4 / (0.87 fy).",
+  r:"Provide at least the minimum stirrup area even where calculated shear is low, using fy not above 415 N/mm² in the formula.",
+  i:"minimum stirrups in beam minimum shear steel shear links requirement beam shear"},
+ {c:"IS 456", cl:"26.4.2.1", h:"Nominal cover to reinforcement (Table 16)",
+  t:"Nominal cover to meet durability requirements shall be not less than: 20 mm for mild exposure, 30 mm for moderate, 45 mm for severe, 50 mm for very severe and 75 mm for extreme exposure. For longitudinal bars in a column, nominal cover shall in any case not be less than 40 mm, or less than the diameter of the bar.",
+  s:"Minimum nominal cover is 20, 30, 45, 50 and 75 mm for mild, moderate, severe, very severe and extreme exposure.",
+  r:"Select cover from the exposure class of the member: 45 mm for severe exposure, 50 mm for very severe, and increase further for extreme conditions.",
+  i:"concrete cover rebar cover exposure conditions minimum cover for reinforcement durability corrosion protection severe exposure"},
+ {c:"IS 456", cl:"8.2.4.1", h:"Minimum concrete grade by exposure (Table 5)",
+  t:"For reinforced concrete the minimum grade of concrete depends on exposure: M20 for mild, M25 for moderate, M30 for severe, M35 for very severe and M40 for extreme exposure. Minimum cement content and maximum water-cement ratio are also prescribed for each exposure condition.",
+  s:"Minimum RCC grades: M20 (mild), M25 (moderate), M30 (severe), M35 (very severe), M40 (extreme).",
+  r:"Specify at least M30 concrete with the prescribed cement content and water-cement ratio for severe exposure.",
+  i:"concrete grade minimum grade of concrete exposure cement content water cement ratio M20 M25 M30 mix"},
+ {c:"IS 456", cl:"26.5.3.1", h:"Longitudinal reinforcement in columns",
+  t:"The cross-sectional area of longitudinal reinforcement shall be not less than 0.8 percent nor more than 6 percent of the gross cross-sectional area of the column. The minimum number of longitudinal bars provided in a column shall be four in rectangular columns and six in circular columns. The bars shall not be less than 12 mm in diameter.",
+  s:"Columns need 0.8% to 6% longitudinal steel, at least 4 bars (rectangular) or 6 bars (circular), 12 mm minimum.",
+  r:"Keep column steel between 0.8% and 6% of gross area (practically about 4% to ease laps) with at least 12 mm diameter bars.",
+  i:"steel in columns column reinforcement minimum bars in column percentage of steel in column"},
+ {c:"IS 456", cl:"23.2", h:"Control of deflection",
+  t:"The final deflection due to all loads including the effects of temperature, creep and shrinkage, measured from the as-cast level of the supports, should not normally exceed span / 250. The deflection occurring after erection of partitions and application of finishes should not normally exceed span / 350 or 20 mm, whichever is less.",
+  s:"Final deflection is limited to span/250; deflection after finishes to span/350 or 20 mm, whichever is smaller.",
+  r:"Check serviceability: total deflection at most span/250 and post-finish deflection at most span/350 or 20 mm.",
+  i:"deflection limit beam sag serviceability span depth ratio how much can a beam deflect"},
+ /* ----- IS 1893 ----- */
+ {c:"IS 1893", cl:"6.4", h:"Seismic zones and zone factor Z",
+  t:"For the purpose of determining seismic forces, the country is classified into four seismic zones: II, III, IV and V (Zone I of earlier editions is merged with Zone II). The zone factor Z for the Maximum Considered Earthquake is 0.10 for Zone II, 0.16 for Zone III, 0.24 for Zone IV and 0.36 for Zone V (Table 3). The zone of a site shall be taken from the seismic zone map and the list of towns given in the standard.",
+  s:"India has seismic zones II to V with zone factors Z = 0.10, 0.16, 0.24 and 0.36.",
+  r:"Identify the site's seismic zone from the map or town list and use the matching Z (0.10 to 0.36) in the design lateral force calculation.",
+  i:"seismic zone requirements for buildings earthquake zones of india zone factor Z which seismic zone is my city zone V highest earthquake zone"},
+ {c:"IS 1893", cl:"7.3", h:"Design requirements for buildings by seismic zone",
+  t:"The design horizontal seismic coefficient for a structure shall be taken as Ah = (Z / 2) (Sa / g) / (R / I), where Z is the zone factor, I is the importance factor, R is the response reduction factor and Sa / g is the average response acceleration coefficient for the fundamental period of the structure. Buildings in higher seismic zones (III, IV and V) require ductile detailing as per IS 13920 and checks for plan and vertical irregularities such as soft storey and mass irregularity.",
+  s:"Seismic design uses Ah = (Z/2)(Sa/g)/(R/I); higher zones demand ductile detailing and irregularity checks.",
+  r:"Compute Ah from Z, I, R and Sa/g; in Zones III to V provide ductile detailing per IS 13920 and avoid soft-storey and other irregularities.",
+  i:"seismic zone requirements earthquake resistant design requirements by zone ductile detailing higher seismic zones design lateral force seismic coefficient"},
+ {c:"IS 1893", cl:"7.2.3", h:"Importance factor I (Table 8)",
+  t:"The importance factor I accounts for the consequence of failure. It is taken as 1.5 for important service and community structures such as hospitals, fire stations and power stations; 1.2 for business, industrial and assembly buildings with large occupancy; and 1.0 for all other buildings.",
+  s:"Importance factor I is 1.5 for essential structures, 1.2 for high-occupancy buildings and 1.0 for others.",
+  r:"Use I = 1.5 for hospitals and other lifeline buildings, which increases the design seismic force by 50% over ordinary buildings.",
+  i:"importance factor hospital building earthquake essential services community buildings school importance"},
+ {c:"IS 1893", cl:"7.6.2", h:"Fundamental natural period of buildings",
+  t:"The approximate fundamental natural period Ta of a moment-resisting frame building without brick infill panels is Ta = 0.075 h^0.75 for reinforced concrete frames and Ta = 0.085 h^0.75 for steel frames, where h is the height of the building in metres. For all other buildings, including RC frames with infill, Ta = 0.09 h / √d, where d is the base dimension of the building at plinth level along the direction of the lateral force.",
+  s:"Ta = 0.075 h^0.75 (RC frame), 0.085 h^0.75 (steel frame), 0.09 h/√d for other buildings.",
+  r:"Use the empirical period formula for the structural system and direction considered to read Sa/g from the design spectrum.",
+  i:"natural period of building fundamental time period formula frequency height of building earthquake"},
+ /* ----- IS 800 ----- */
+ {c:"IS 800", cl:"5.4.1", h:"Partial safety factors for materials (Table 5)",
+  t:"The partial safety factor for material is γm0 = 1.10 for resistance governed by yielding or buckling and γm1 = 1.25 for resistance governed by ultimate stress. For bolts, γmb = 1.25 for bearing-type and friction-type connections at ultimate load; for welds, γmw = 1.25 for shop welds and 1.50 for field welds.",
+  s:"Material safety factors: γm0 = 1.10 (yielding), γm1 = 1.25 (ultimate), welds 1.25 (shop) and 1.50 (field).",
+  r:"Divide yield-governed resistances by 1.10 and ultimate-governed resistances by 1.25; use 1.50 for field welds.",
+  i:"partial safety factor for steel material safety factor gamma m0 limit state design steel factor of safety"},
+ {c:"IS 800", cl:"3.8", h:"Maximum effective slenderness ratio (Table 3)",
+  t:"The maximum effective slenderness ratio KL/r shall not exceed: 180 for a member carrying compressive loads resulting from dead loads and imposed loads; 250 for a compression member in which the load arises only from wind or earthquake forces, provided deformation does not adversely affect the structure; 350 for tension members in which a reversal of direct stress occurs due to wind or earthquake; and 400 for members that are always in tension.",
+  s:"Slenderness limits: 180 for compression members under gravity loads, 250 under wind or seismic only, 350 and 400 for tension members.",
+  r:"Keep KL/r at most 180 for columns and struts carrying dead and live loads; select a heavier section if the limit is exceeded.",
+  i:"slenderness ratio limit compression members buckling how slender can a steel column be strut KL/r maximum"},
+ {c:"IS 800", cl:"10.2", h:"Spacing and edge distance of bolts",
+  t:"Minimum pitch: the distance between centres of fasteners shall not be less than 2.5 times the nominal diameter of the fastener. Maximum pitch: not more than 32 t or 300 mm, whichever is less, for tension members, where t is the thickness of the thinner outer plate. Minimum edge distance: 1.7 times the hole diameter for sheared or hand flame-cut edges and 1.5 times the hole diameter for rolled, machine flame-cut, sawn or planed edges. Maximum edge distance shall not exceed 12 t ε, where ε = √(250 / fy).",
+  s:"Bolt pitch at least 2.5 d; edge distance at least 1.7 d0 (sheared or hand-cut) or 1.5 d0 (rolled or machine-cut).",
+  r:"Lay out bolts at 2.5 d minimum pitch and 1.7 d0 minimum edge distance (1.5 d0 for rolled edges) to avoid bearing and tear-out failures.",
+  i:"bolt spacing edge distance steel connection bolted joints pitch minimum distance between bolts fastener layout"},
+ {c:"IS 800", cl:"8.4.1", h:"Design shear strength of steel sections",
+  t:"The design shear strength of a section is Vd = Vn / γm0, where the nominal plastic shear resistance Vn = Av fyw / √3, Av is the shear area and fyw is the yield strength of the web. Shear buckling of slender webs shall be checked separately as per Clause 8.4.2.",
+  s:"Vd = Av fyw / (√3 γm0); check shear buckling for slender webs.",
+  r:"Verify the factored shear on each steel beam is at most Vd, and check web buckling for deep slender webs.",
+  i:"shear capacity steel beam design shear strength of steel section web shear steel girder"},
+ {c:"IS 800", cl:"6.2", h:"Design strength of tension members",
+  t:"The design strength of a tension member is governed by the least of: yielding of the gross section, Tdg = Ag fy / γm0; rupture of the critical section, Tdn = 0.9 An fu / γm1; and block shear failure at end connections.",
+  s:"Tension capacity is the lowest of gross yielding, net-section rupture and block shear.",
+  r:"Evaluate all three failure modes for each tension member and design to the smallest strength.",
+  i:"tension member capacity steel rod tie bar yielding rupture net area tensile strength of steel member"},
+ /* ----- IS 302 ----- */
+ {c:"IS 302", cl:"8", h:"Protection against access to live parts",
+  t:"Appliances shall be constructed and enclosed so that there is adequate protection against accidental contact with live parts. The standard test finger and test pin shall not be able to touch live parts, and protection shall not be removable without the use of a tool. Basic insulation alone shall not be accessible to touch.",
+  s:"Enclosures must prevent contact with live parts and the protection must need a tool to remove.",
+  r:"Verify with the standard test finger that no live part is reachable, and use tool-fixed covers on all enclosures.",
+  i:"electric shock protection live parts appliance enclosure safety accidental contact test finger"},
+ {c:"IS 302", cl:"13", h:"Leakage current and electric strength at operating temperature",
+  t:"At operating temperature the leakage current shall not exceed: 0.25 mA per Class II appliance; 0.75 mA for portable Class I appliances; and 3.5 mA for stationary Class I motor-operated appliances or those without heating elements. The insulation shall then withstand the specified electric strength test voltage for one minute.",
+  s:"Leakage limits: 0.25 mA (Class II), 0.75 mA (portable Class I), 3.5 mA (stationary motor-operated Class I).",
+  r:"Test every new appliance model for leakage current at operating temperature and keep it under the limit for its class.",
+  i:"maximum leakage current portable appliance electrical safety limit milliamp leakage household appliance class I class II"},
+ {c:"IS 302", cl:"27", h:"Provision for earthing",
+  t:"Accessible metal parts of Class I appliances that may become live in the event of an insulation fault shall be permanently and reliably connected to an earthing terminal or to the earthing contact of the appliance inlet or plug. The resistance between the earthing terminal or earthing contact and the accessible metal part shall not exceed 0.1 Ω.",
+  s:"Accessible metal parts of Class I appliances must be reliably earthed with resistance at most 0.1 Ω.",
+  r:"Bond all accessible metal parts to the earth pin and verify the earth path resistance does not exceed 0.1 Ω.",
+  i:"earthing requirements for appliances grounding of appliance body earth continuity metal body earth resistance"},
+ {c:"IS 302", cl:"11", h:"Heating",
+  t:"Appliances shall not attain excessive temperatures in normal use. The temperature rises of parts that are touched in normal use, such as handles, knobs and grips, and of winding insulation and surrounding surfaces shall not exceed the limits given in the standard when the appliance is operated at rated voltage under the specified test conditions.",
+  s:"Handles, knobs and insulation must stay within the tabulated temperature-rise limits in normal use.",
+  r:"Run the heating test at rated voltage and confirm every touched part and winding stays within its limit.",
+  i:"appliance heating temperature rise overheating hot surface handle temperature thermal safety"},
+ {c:"IS 302", cl:"19", h:"Abnormal operation",
+  t:"Appliances shall be designed so that the risk of fire, mechanical damage impairing safety, or loss of protection against electric shock as a result of abnormal or careless operation is obviated as far as practicable. Compliance is checked by operating the appliance under fault and misuse conditions such as blocked ventilation and locked-rotor tests.",
+  s:"Fault and misuse conditions (blocked vents, locked rotor) must not cause fire or shock hazard.",
+  r:"Include blocked-ventilation and locked-rotor tests in type testing and add thermal cut-outs where required.",
+  i:"appliance fire risk fault condition misuse overheating cut-out abnormal operation safety"},
+ /* ----- IS 732 ----- */
+ {c:"IS 732", cl:"4.4", h:"Voltage drop in installations",
+  t:"The voltage drop from the point of consumer's supply to any point on the installation shall not exceed 3 percent of the supply voltage when all lights, fans and appliances connected to the system are in operation. Conductor size shall be selected for both current-carrying capacity and permissible voltage drop.",
+  s:"Total voltage drop in the wiring must not exceed 3% of the supply voltage at full load.",
+  r:"Size cables for both ampacity and a 3% voltage drop limit, using a larger cross-section for long runs.",
+  i:"voltage drop limit wiring maximum voltage drop in cable permissible drop supply voltage conductor size long cable run"},
+ {c:"IS 732", cl:"8.1", h:"Earthing of wiring installations",
+  t:"All metal conduits, sheaths and armouring of cables, metallic frames and enclosures of fixed equipment, and exposed metal parts that may become live shall be earthed. The earth continuity conductor shall be sized in proportion to the phase conductor and every earthing connection shall be mechanically and electrically sound.",
+  s:"All exposed metalwork, conduit and cable armouring in an installation must be effectively earthed.",
+  r:"Bond every metal conduit, enclosure and frame to the earth system and test earth continuity before commissioning.",
+  i:"earthing of wiring installation grounding conduit armoured cable earth continuity protective conductor building wiring earth"},
+ {c:"IS 732", cl:"5.2", h:"Colour identification of conductors",
+  t:"Conductors shall be identified by colour: red, yellow and blue for the three phases, black for neutral and green for the protective earth conductor. Where only single-phase wiring is used, red may be used for the phase conductor.",
+  s:"Phases are red, yellow and blue, neutral is black and earth is green.",
+  r:"Use the standard colour code consistently across all circuits to prevent mix-ups during maintenance.",
+  i:"wire colour code phase neutral earth colours of cables red yellow blue black green insulation colour"},
+ {c:"IS 732", cl:"5.1", h:"Minimum conductor size",
+  t:"For fixed wiring the minimum cross-sectional area of conductors shall be 1.5 mm² for copper and 2.5 mm² for aluminium. Circuits feeding power socket-outlets shall use conductors of not less than 2.5 mm² copper, and conductors shall be selected so that their current-carrying capacity is not less than the rated load of the circuit.",
+  s:"Minimum fixed-wiring conductor is 1.5 mm² copper or 2.5 mm² aluminium; 2.5 mm² copper for power sockets.",
+  r:"Use at least 1.5 mm² copper for lighting circuits and 2.5 mm² copper for socket circuits, increased as the load requires.",
+  i:"minimum wire size cable size for wiring copper conductor cross section lighting circuit socket circuit gauge of wire"},
+ {c:"IS 732", cl:"7.3", h:"Conduit space factor",
+  t:"The number of conductors drawn into a conduit shall be such that the space factor does not exceed 40 percent of the internal cross-sectional area of the conduit. Conduit bends shall have an adequate radius so that insulation is not damaged during drawing-in, and draw boxes shall be provided at suitable intervals.",
+  s:"Conductors may fill at most 40% of a conduit's internal area.",
+  r:"Select conduit diameter so the total conductor cross-section stays under 40% of its internal area and add draw boxes on long runs.",
+  i:"how many wires in a conduit conduit fill space factor conduit size number of cables in pipe"},
+ {c:"IS 732", cl:"9.2", h:"Residual current protection",
+  t:"Socket-outlet circuits that may supply portable equipment used outdoors or in wet areas shall be protected by a residual current device (RCD) having a rated residual operating current not exceeding 30 mA. Each circuit shall also be protected against overload and short circuit by a suitable fuse or miniature circuit breaker.",
+  s:"Socket circuits for portable or wet-area equipment need a 30 mA RCD plus overcurrent protection.",
+  r:"Install a 30 mA RCD on socket circuits that feed portable equipment, and an MCB or fuse on every circuit.",
+  i:"RCD ELCB RCCB 30 mA shock protection socket outlet protection MCB fuse circuit breaker residual current"}
+];
+
+/* ---------- Text utilities ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const STOP = new Set(("a an the is are was were be been to of in on for and or with what how which when where do does should can i me my we you it its this that as at by from into than then there their about any all required requirement requirements need needed shall must much many much give show tell").split(" "));
+function tokenize(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g," ").trim().split(/\s+/).filter(Boolean); }
+function stem(w){
+  if(w.length>4 && w.endsWith("ies")) return w.slice(0,-3)+"y";
+  for(const suf of ["ing","ed","es","s"]){ if(w.length>suf.length+2 && w.endsWith(suf)) return w.slice(0,-suf.length); }
+  return w;
+}
+function hash(s){ let h=2166136261; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); } return h>>>0; }
+
+/* ---------- Concept space (emulates a sentence-embedding space for the demo) ---------- */
+const CONCEPTS = {
+  beam:["beam","girder","flexure","flexural","web","joist"],
+  rebar:["steel","reinforcement","rebar","bar","stirrup","tension","hysd","tmt","link"],
+  shear:["shear","stirrup","spacing","link"],
+  cover:["cover","exposure","durability","corrosion","fire","protection"],
+  concrete:["concrete","grade","m20","m25","m30","cement","rcc","mix"],
+  column:["column","pillar","axial","strut"],
+  deflect:["deflection","sag","serviceability","span","depth"],
+  seismic:["seismic","earthquake","quake","tremor","zone","ductile","lateral","damper"],
+  zone:["zone","region","map","site","town","city"],
+  period:["period","frequency","fundamental","natural"],
+  importance:["importance","hospital","school","essential","community","lifeline"],
+  safetyf:["partial","safety","factor","material","resistance","yielding","limit"],
+  slender:["slender","slenderness","buckling","compression","strut"],
+  bolt:["bolt","connection","joint","pitch","edge","fastener","rivet","hole"],
+  weld:["weld","fabrication","fabricate","welding"],
+  tensionm:["tension","tensile","rupture","gross","net","yield","tie"],
+  steelstr:["steel","structural","section","plate","angle","rolled"],
+  leak:["leakage","shock","current","milliamp","appliance","household","portable"],
+  earth:["earth","earthing","ground","grounding","bonding","continuity","protective"],
+  wiring:["wiring","conductor","cable","wire","conduit","installation","circuit","insulation"],
+  voltage:["voltage","drop","volt","supply","load"],
+  live:["live","contact","access","terminal","enclosure","probe"],
+  heat:["heat","heating","temperature","thermal","hot","overheat","rise"],
+  colour:["colour","color","phase","neutral","identification","red","yellow","blue"],
+  rcd:["rcd","rccb","elcb","residual","trip","mcb","fuse","breaker"],
+  hazard:["safety","hazard","risk","fault","misuse","abnormal"]
+};
+const CNAMES = Object.keys(CONCEPTS);
+const NC = CNAMES.length, H = 96;
+const CIDX = new Map();
+CNAMES.forEach((n,ci)=>CONCEPTS[n].forEach(w=>{ const s=stem(w); if(!CIDX.has(s)) CIDX.set(s,[]); if(!CIDX.get(s).includes(ci)) CIDX.get(s).push(ci); }));
+
+/* ---------- Build chunks (metadata anchoring) ---------- */
+const CHUNKS = RAW.map((r,idx)=>({
+  id:idx, code:r.c, clause:r.cl, heading:r.h, text:r.t, summary:r.s, rec:r.r, intents:r.i,
+  title:STANDARDS[r.c].title, year:STANDARDS[r.c].year, domain:STANDARDS[r.c].domain,
+  tokens:Math.round(tokenize(r.t).length*1.35)
+}));
+const DF = {};
+CHUNKS.forEach(c=>{ const seen=new Set(tokenize(c.heading+" "+c.text+" "+c.intents).filter(w=>!STOP.has(w)).map(stem)); seen.forEach(t=>DF[t]=(DF[t]||0)+1); });
+const N = CHUNKS.length;
+const IDF = {}; Object.keys(DF).forEach(t=>IDF[t]=Math.log(1+N/DF[t]));
+const DEFIDF = Math.log(1+N);
+function embed(text){
+  const toks = tokenize(text).filter(w=>!STOP.has(w)).map(stem);
+  const tf = {}; toks.forEach(t=>tf[t]=(tf[t]||0)+1);
+  const v = new Float32Array(NC+H);
+  for(const t in tf){
+    const w = 1+Math.log(tf[t]);
+    (CIDX.get(t)||[]).forEach(ci=>{ v[ci]+=1.5*w; });
+    v[NC+(hash(t)%H)] += 0.35*w*(IDF[t]||DEFIDF);
+  }
+  let n=0; for(let i=0;i<v.length;i++) n+=v[i]*v[i]; n=Math.sqrt(n)||1;
+  for(let i=0;i<v.length;i++) v[i]/=n;
+  return v;
+}
+CHUNKS.forEach(c=>{ c.vec = embed(c.heading+" "+c.clause+" "+c.text+" "+c.intents); c.raw = tokenize(c.clause+" "+c.heading+" "+c.text); });
+function cosine(a,b){ let s=0; for(let i=0;i<a.length;i++) s+=a[i]*b[i]; return s; }
+
+/* ---------- Domain rules (deterministic) ---------- */
+const DOMAIN_RULES = {
+  Civil:["beam","column","slab","concrete","rcc","reinforcement","rebar","earthquake","seismic","zone","footing","foundation","cover","deflection","stirrup","building","hospital","cement"],
+  Electrical:["current","voltage","wiring","wire","cable","appliance","earthing","earth","shock","leakage","rcd","elcb","mcb","conduit","circuit","socket","insulation","phase"],
+  Mechanical:["bolt","bolted","weld","welding","fabrication","slenderness","buckling","connection","pitch","fastener","edge","tension","strut","section"]
+};
+function inferDomain(q){
+  const toks = new Set(tokenize(q));
+  const scores = {}; const hits = {};
+  for(const d in DOMAIN_RULES){ hits[d]=DOMAIN_RULES[d].filter(w=>toks.has(w)||toks.has(w+"s")); scores[d]=hits[d].length; }
+  const best = Object.keys(scores).sort((a,b)=>scores[b]-scores[a])[0];
+  return {domain: scores[best]>0 ? best : null, scores, hits};
+}
+
+/* ---------- Search engines ---------- */
+function parseRef(q){
+  const cm = q.match(/\bIS\s*-?\s*(\d{3,4})\b/i);
+  const clm = q.match(/(?:clause|cl\.?|section)\s*(\d+(?:\.\d+)*)/i) || q.match(/\b(\d{1,2}\.\d+(?:\.\d+)*)\b/);
+  return { code: cm ? "IS "+cm[1] : null, clause: clm ? clm[1] : null };
+}
+function sectorOk(c, sector){ return sector==="All" || c.domain.includes(sector); }
+
+function semanticSearch(q, sector, k=5){
+  const t0 = performance.now(); const trace = [];
+  const ref = parseRef(q);
+  trace.push({n:"Query understanding", d:`Normalised query: <code>${esc(tokenize(q).join(" "))}</code>. Detected standard code: <code>${esc(ref.code||"none")}</code>; clause: <code>${esc(ref.clause||"none")}</code>.`});
+  const qv = embed(q);
+  const act = CNAMES.map((n,i)=>[n,qv[i]]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  trace.push({n:"Query embedding (MiniLM-style vector)", d: act.length ? "Top activated concepts: "+act.slice(0,6).map(a=>`<code>${a[0]} ${a[1].toFixed(2)}</code>`).join(" ") : "No engineering concepts activated; falling back to lexical hash features."});
+  const pool = CHUNKS.filter(c=>sectorOk(c,sector));
+  trace.push({n:"Sector filter", d:`Sector <code>${esc(sector)}</code> keeps ${pool.length} of ${CHUNKS.length} chunks.`});
+  const sims = pool.map(c=>({c, cos:cosine(qv,c.vec)})).sort((a,b)=>b.cos-a.cos);
+  trace.push({n:"Vector search (cosine similarity)", d:"Top candidates before re-ranking: "+sims.slice(0,k+3).map(s=>`<code>${esc(s.c.code)} §${esc(s.c.clause)} ${s.cos.toFixed(3)}</code>`).join(" ")});
+  const dom = inferDomain(q);
+  const qContent = tokenize(q).filter(w=>!STOP.has(w));
+  const rules = [];
+  if(dom.domain) rules.push(`Domain rule: query matched ${dom.domain} vocabulary (${dom.hits[dom.domain].join(", ")}) → +0.12 for ${dom.domain} chunks, −0.06 otherwise.`);
+  const scored = sims.map(s=>{
+    const c=s.c; let f = 0.6*s.cos; const why=[];
+    if(dom.domain){ if(c.domain.includes(dom.domain)){ f+=0.12; why.push("domain rule +0.12"); } else { f-=0.06; why.push("domain rule −0.06"); } }
+    const intentSet = new Set(tokenize(c.intents).map(stem));
+    if(qContent.length && qContent.every(w=>intentSet.has(stem(w)))){ f+=0.10; why.push("intent anchor +0.10"); }
+    let exact=false;
+    if(ref.code && c.code===ref.code){
+      f+=0.20; why.push("code match +0.20");
+      if(ref.clause && (c.clause===ref.clause || c.clause.startsWith(ref.clause+"."))){ f+=0.60; exact=true; why.push("exact code + clause +0.60"); }
+    } else if(!ref.code && ref.clause && (c.clause===ref.clause || c.clause.startsWith(ref.clause+"."))){
+      f+=0.25; why.push("clause match +0.25");
+    }
+    const shared = CNAMES.filter((n,i)=>qv[i]>0 && c.vec[i]>0);
+    return {c, cos:s.cos, score:f, why, exact, shared};
+  }).sort((a,b)=>b.score-a.score);
+  if(ref.code) rules.push(`Exact reference rule: <code>${esc(ref.code)}</code>${ref.clause?` clause <code>${esc(ref.clause)}</code>`:""} boosted.`);
+  rules.push("Intent-anchor rule: +0.10 when every content word of the query appears in a chunk's anchored intent metadata.");
+  trace.push({n:"Hybrid re-ranking (deterministic rules)", d: rules.join("<br>")});
+  const top = scored.slice(0,k);
+  trace.push({n:"Final ranking", d: top.map((r,i)=>`${i+1}. <code>${esc(r.c.code)} §${esc(r.c.clause)}</code> score ${r.score.toFixed(3)} (cos ${r.cos.toFixed(3)}${r.why.length?"; "+esc(r.why.join(", ")):""})`).join("<br>")});
+  const ms = performance.now()-t0;
+  return {results:top, ms, trace, ref, dom, qv};
+}
+
+function keywordSearch(q, sector, k=5){
+  const t0 = performance.now();
+  const qt = tokenize(q).filter(w=>!STOP.has(w));
+  const res = CHUNKS.filter(c=>sectorOk(c,sector)).map(c=>{
+    let hits=0; const matched=new Set();
+    qt.forEach(w=>{ const n=c.raw.filter(x=>x===w).length; if(n){ hits+=n; matched.add(w); } });
+    return {c, score: hits/(1+Math.log(c.raw.length)), matched:[...matched]};
+  }).filter(r=>r.score>0).sort((a,b)=>b.score-a.score).slice(0,k);
+  return {results:res, ms:performance.now()-t0, terms:qt};
+}
+
+/* ---------- Rendering ---------- */
+function domTags(c){ return c.domain.map(d=>`<span class="tag ${d.toLowerCase()}">${d}</span>`).join(""); }
+function hl(text, terms){
+  let out = esc(text);
+  terms.forEach(t=>{ if(!t) return; const re=new RegExp("\\b("+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")\\b","gi"); out = out.replace(re,"<mark>$1</mark>"); });
+  return out;
+}
+function cardSem(r, i, maxScore){
+  const c=r.c, w=Math.max(4,Math.round(r.score/maxScore*100));
+  return `<div class="res">
+    <div class="top"><div><span class="code">${esc(c.code)}</span> · <span class="clause">Clause ${esc(c.clause)}</span> ${r.exact?'<span class="tag exact">Exact match</span>':''}</div><div class="muted small">${i===0?"Best match":"#"+(i+1)}<span class="tech-only"> · score ${r.score.toFixed(2)} · cosine ${r.cos.toFixed(2)}</span></div></div>
+    <div class="title">${esc(c.heading)}</div>
+    <div class="muted small">${esc(c.title)} · ${c.year}</div>
+    <div style="margin-top:6px">${domTags(c)}<span class="tech-only">${r.shared.slice(0,4).map(s=>`<span class="tag">concept: ${esc(s)}</span>`).join("")}</span></div>
+    <div class="muted small">Relevance</div><div class="bar"><i style="width:${w}%"></i></div>
+    <p><strong>Summary:</strong> ${esc(c.summary)}</p>
+    <pre>${esc(c.text)}</pre>
+  </div>`;
+}
+function cardKw(r, i, maxScore, terms){
+  const c=r.c, w=Math.max(4,Math.round(r.score/maxScore*100));
+  return `<div class="res">
+    <div class="top"><div><span class="code">${esc(c.code)}</span> · <span class="clause">Clause ${esc(c.clause)}</span></div><div class="muted small">#${i+1}<span class="tech-only"> · match score ${r.score.toFixed(2)}</span></div></div>
+    <div class="title">${esc(c.heading)}</div>
+    <div style="margin-top:6px">${domTags(c)}${r.matched.map(m=>`<span class="tag">word found: ${esc(m)}</span>`).join("")}</div>
+    <div class="bar kw"><i style="width:${w}%"></i></div>
+    <pre>${hl(c.text, r.matched)}</pre>
+  </div>`;
+}
+
+let sector = "All";
+function run(q){
+  q = q.trim(); const out = $("#out");
+  if(!q){ out.innerHTML='<div class="empty" style="margin-top:14px">Type a question or pick a sample query above.</div>'; return; }
+  const sem = semanticSearch(q, sector), kw = keywordSearch(q, sector);
+  const top = sem.results[0];
+  const ref = sem.ref;
+  const maxS = Math.max(sem.results[0]?.score||1, 0.001);
+  const maxK = Math.max(kw.results[0]?.score||1, 0.001);
+  const speed = kw.ms>0 && sem.ms>0 ? (kw.ms/sem.ms) : null;
+  let html = "";
+  html += `<div class="card hl" style="margin-top:14px">
+    <div class="small muted">Query</div><h2 style="margin-bottom:6px">${esc(q)}</h2>
+    <div>${ref.code?`<span class="tag exact">Code: ${esc(ref.code)}</span>`:""}${ref.clause?`<span class="tag exact">Clause: ${esc(ref.clause)}</span>`:""}${sem.dom.domain?`<span class="tag ${sem.dom.domain.toLowerCase()}">Topic: ${sem.dom.domain}</span>`:`<span class="tag">Topic: general</span>`}<span class="tag">Sector: ${esc(sector)}</span></div>`;
+  if(top){
+    html += `<div class="reco"><strong>Recommended standard:</strong> ${esc(top.c.code)} (${top.c.year}), Clause ${esc(top.c.clause)} — ${esc(top.c.heading)}<br><strong>Summary:</strong> ${esc(top.c.summary)}<br><strong>Compliance recommendation:</strong> ${esc(top.c.rec)}</div>`;
+    const related = sem.results.slice(1,4).map(r=>`${esc(r.c.code)} §${esc(r.c.clause)}`).join(" · ");
+    if(related) html += `<div class="small muted">Also review: ${related}</div>`;
+  } else {
+    html += `<div class="empty" style="margin-top:10px">No matching clause is available for this sector and question. Try the “All” sector.</div>`;
+  }
+  html += `<details class="tech-only"><summary>Retrieval trace (how this answer was produced)</summary><div class="trace"><ol>${sem.trace.map(s=>`<li><strong>${esc(s.n)}.</strong> ${s.d}</li>`).join("")}</ol></div></details></div>`;
+  html += `<div class="cols">
+    <div><div class="colhead"><h3>Smart search (recommended)</h3><span class="tag exact tech-only">${sem.ms.toFixed(2)} ms in-browser</span></div>
+      ${sem.results.length? sem.results.map((r,i)=>cardSem(r,i,maxS)).join("") : '<div class="empty">No results.</div>'}</div>
+    <div><div class="colhead"><h3>Ordinary keyword search</h3><span class="tag civil tech-only">${kw.ms.toFixed(2)} ms in-browser</span></div>
+      <div class="small muted" style="margin-bottom:8px">Only finds clauses that contain your exact words.<span class="tech-only"> Terms searched: ${kw.terms.length?kw.terms.map(t=>`<code>${esc(t)}</code>`).join(" "):"none"}</span></div>
+      ${kw.results.length? kw.results.map((r,i)=>cardKw(r,i,maxK,kw.terms)).join("") : '<div class="empty">Keyword search found no chunk containing these exact words. Smart search can still find the right clause in cases like this.</div>'}</div>
+  </div>
+  <p class="small muted tech-only" style="margin-top:6px">Timings above are measured live on the small demo corpus (${CHUNKS.length} clause chunks). Full-corpus benchmark latency across 20,000+ standards is 0.42 s vs 1.8 s (4.3x faster); see the Benchmark tab.</p>`;
+  out.innerHTML = html;
+}
+
+/* ---------- Wiring ---------- */
+const SAMPLES = [
+  "What steel is required in beams?",
+  "Seismic zone requirements for buildings",
+  "IS 1893 clause 6.4",
+  "IS 1893 clause 7.3",
+  "IS 456 clause 26.5.1",
+  "Minimum cover for reinforcement in severe exposure",
+  "Maximum leakage current for a portable appliance",
+  "What is the voltage drop limit for wiring?",
+  "Earthing requirements for appliances",
+  "Bolt spacing and edge distance in steel connections",
+  "How slender can a steel compression member be?",
+  "Which RCD rating protects socket outlets?"
+];
+$("#samples").innerHTML = '<span class="muted small" style="align-self:center">Try:</span>' + SAMPLES.map(s=>`<button type="button" class="chip sample">${esc(s)}</button>`).join("");
+$("#samples").addEventListener("click", e=>{ const b=e.target.closest(".sample"); if(!b) return; $("#q").value=b.textContent; run(b.textContent); });
+$("#form").addEventListener("submit", e=>{ e.preventDefault(); run($("#q").value); });
+$("#sectors").addEventListener("click", e=>{ const b=e.target.closest("[data-s]"); if(!b) return; sector=b.dataset.s; document.querySelectorAll("#sectors .chip").forEach(x=>x.classList.toggle("on",x===b)); run($("#q").value); });
+/* Technical details toggle (hidden by default) */
+(function(){
+  const cb = $("#techToggle"); let on = false;
+  try { on = localStorage.getItem("bis-tech")==="1"; } catch(e){}
+  cb.checked = on; document.body.classList.toggle("tech", on);
+  cb.addEventListener("change", ()=>{ document.body.classList.toggle("tech", cb.checked); try { localStorage.setItem("bis-tech", cb.checked?"1":"0"); } catch(e){} });
+})();
+/* Theme toggle (light / dark) */
+(function(){
+  const root = document.documentElement, btn = $("#themeBtn");
+  let theme = null;
+  try { theme = localStorage.getItem("bis-theme"); } catch(e){}
+  if(theme!=="light" && theme!=="dark"){ theme = (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches) ? "light" : "dark"; }
+  function apply(t){ root.setAttribute("data-theme", t); btn.textContent = t==="dark" ? "Light theme" : "Dark theme"; try { localStorage.setItem("bis-theme", t); } catch(e){} }
+  apply(theme);
+  btn.addEventListener("click", ()=>apply(root.getAttribute("data-theme")==="dark" ? "light" : "dark"));
+})();
+$("#tabs").addEventListener("click", e=>{ const b=e.target.closest("button[data-v]"); if(!b || !b.dataset.v) return;
+  document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("active",x===b));
+  document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active", s.id==="v-"+b.dataset.v));
+  window.scrollTo({top:0,behavior:"smooth"}); });
+
+/* Corpus stats + explorer */
+(function(){
+  const avg = Math.round(CHUNKS.reduce((a,c)=>a+c.tokens,0)/CHUNKS.length);
+  $("#stats").innerHTML = [
+    [CHUNKS.length,"clause chunks in demo corpus"],
+    [Object.keys(STANDARDS).length,"reference standards"],
+    [avg,"avg. tokens per chunk (est.)"],
+    [NC+H,"embedding dimensions (demo space)"]
+  ].map(s=>`<div class="card metric"><div class="num">${s[0]}</div><div class="muted small">${s[1]}</div></div>`).join("");
+  $("#corpusTable").innerHTML = "<thead><tr><th>Standard</th><th>Clause</th><th>Heading</th><th>Year</th><th>Domain</th><th class='tech-only'>~Tokens</th></tr></thead><tbody>" +
+    CHUNKS.map(c=>`<tr><td>${esc(c.code)}</td><td>${esc(c.clause)}</td><td>${esc(c.heading)}</td><td>${c.year}</td><td>${domTags(c)}</td><td class="tech-only">${c.tokens}</td></tr>`).join("") + "</tbody>";
+})();
+
+run($("#q").value);
+</script>
+</body>
+</html>
+
+</body></html>
